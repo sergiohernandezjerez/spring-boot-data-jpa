@@ -11,11 +11,11 @@ import com.thefundidors.springboot.app.models.dao.IClienteDao;
 
 @Controller
 public class ClienteController {
-	
+
 	@Autowired
 	@Qualifier("clienteDaoJPA")
 	private IClienteDao clienteDao;
-	
+
 	@RequestMapping(value="/listar", method = RequestMethod.GET)
 	public String listar(Model model) {
 		model.addAttribute("titulo", "Listado de clientes");

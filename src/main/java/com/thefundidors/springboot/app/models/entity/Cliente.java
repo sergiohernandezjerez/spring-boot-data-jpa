@@ -21,18 +21,18 @@ public class Cliente implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String nombre;
 	private String apellidos;
 	private String email;
-	
+
 	@Column(name="create_At")
 	@Temporal(TemporalType.DATE)
 	private Date createAt;
 
-	
-	
-	
+
+
+
 	public Long getId() {
 		return id;
 	}
@@ -76,9 +76,9 @@ public class Cliente implements Serializable{
 	public static long getSerialversionuid() {
 		return serialVersionUID;
 	}
-	
-	
-	
-	
-	
+
+
+
+
+
 }

@@ -12,7 +12,7 @@ import com.thefundidors.springboot.app.models.entity.Cliente;
 
 @Repository("clienteDaoJPA")
 public class ClienteDaoImpl implements IClienteDao {
-	
+
 	@PersistenceContext
 	private EntityManager entityManager;
 
