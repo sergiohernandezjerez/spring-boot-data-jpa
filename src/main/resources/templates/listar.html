@@ -29,35 +29,37 @@
     </div>
   </div>
 </nav>
-<div class="container">
-<h1 class="text-secondary border border-success border-top-0 border-left-0 border-right-0" th:text="${titulo}"></h1>
+	<div class="container">
+		<h1
+			class="text-secondary border border-success border-top-0 border-left-0 border-right-0"
+			th:text="${titulo}"></h1>
+		<a th:href="@{/form}">Crear Cliente</a>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>nombre</th>
+					<th>apellidos</th>
+					<th>email</th>
+					<th>fecha</th>
+				</tr>
 
-	<table class="table table-striped">
-		<thead>
-			<tr>
-				<th>id</th>
-				<th>nombre</th>
-				<th>apellidos</th>
-				<th>email</th>
-				<th>fecha</th>
-			</tr>
+			</thead>
+			<tbody>
+				<tr th:each="cliente: ${clientes}">
+					<td th:text="${cliente.id}"></td>
+					<td th:text="${cliente.nombre}"></td>
+					<td th:text="${cliente.apellidos}"></td>
+					<td th:text="${cliente.email}"></td>
+					<td th:text="${cliente.createAt}"></td>
+				</tr>
 
-		</thead>
-		<tbody>
-			<tr th:each="cliente: ${clientes}">
-				<td th:text="${cliente.id}"></td>
-				<td th:text="${cliente.nombre}"></td>
-				<td th:text="${cliente.apellidos}"></td>
-				<td th:text="${cliente.email}"></td>
-				<td th:text="${cliente.createAt}"></td>
-			</tr>
+			</tbody>
 
-		</tbody>
+		</table>
 
-	</table>
+	</div>
 
-</div>
-	
 	<script
 		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
 		integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
