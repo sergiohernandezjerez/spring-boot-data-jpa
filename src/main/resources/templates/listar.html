@@ -1,39 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head>
-<meta charset="utf-8" />
-<title th:text="${titulo}"></title>
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
-	crossorigin="anonymous">
-
+<head th:replace="layout/layout :: head">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Spring Boot</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#about" th:href="@{/listar}">Clientes</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+	<header th:replace="layout/layout :: header"> </header>
 	<div class="container">
 		<h1
 			class="text-secondary border border-success border-top-0 border-left-0 border-right-0"
 			th:text="${titulo}"></h1>
-		<p><a th:href="@{/form}" class="btn btn-success btn-xs">Crear Cliente</a></p>
+		<p>
+			<a th:href="@{/form}" class="btn btn-success btn-xs">Crear
+				Cliente</a>
+		</p>
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -54,8 +32,11 @@
 					<td th:text="${cliente.apellidos}"></td>
 					<td th:text="${cliente.email}"></td>
 					<td th:text="${cliente.createAt}"></td>
-					<td><a class="btn btn-primary btn-xs" th:href="@{/form/} + ${cliente.id}" th:text="'editar'"></a></td>
-					<td><a class="btn btn-danger btn-xs" th:href="@{/eliminar/} + ${cliente.id}" th:text="'eliminar'" onclick="return confirm('EstÃ¡s seguro que quieres eliminar?')"></a></td>
+					<td><a class="btn btn-primary btn-xs"
+						th:href="@{/form/} + ${cliente.id}" th:text="'editar'"></a></td>
+					<td><a class="btn btn-danger btn-xs"
+						th:href="@{/eliminar/} + ${cliente.id}" th:text="'eliminar'"
+						onclick="return confirm('Estás seguro que quieres eliminar?')"></a></td>
 				</tr>
 
 			</tbody>
@@ -63,18 +44,6 @@
 		</table>
 
 	</div>
-
-	<script
-		src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
-		integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
-		integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
-		crossorigin="anonymous"></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
-		crossorigin="anonymous"></script>
+	<footer th:replace="layout/layout :: footer"></footer>
 </body>
 </html>
